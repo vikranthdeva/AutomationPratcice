@@ -1,86 +1,40 @@
-package com.app;
+package Hello;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
-import org.openqa.selenium.support.PageFactory;
+public class KeyWord {
+		
 
-public class HomePageObjects extends BasePage {
-
-	@FindBy(xpath = "//h3[text()='Registration']")
-	private WebElement registration;
-
-	@FindBy(xpath = "//h3[text()='interaction']")
-	private WebElement interaction;
-
-	@FindBy(xpath = "//h3[text()='Widget']")
-	private WebElement widget;
-
-	@FindBy(xpath = "//h3[text()='Frames and Windows']")
-	private WebElement framesAndWindows;
-
-	@FindBys(@FindBy(xpath = "//div/aside[contains(@class,'widget_nav_menu')]//h3"))
-	private List<WebElement> navPanelHeading;
-
-	@FindBy(xpath = "//div[./h5[text()='Customer Support']]//img")
-	private WebElement imgCustomerSupport;
-
-	@FindBy(className = "entry-titl")
-	private WebElement titleHome;
-
-	@FindBy(xpath = ".//a[text()='About us']")
-	private WebElement lnkAbousUs;
-
-	@FindBy(xpath = ".//a[text()='Services']")
-	private WebElement lnkServices;
-
-	@FindBy(xpath = ".//a[text()='Blog']")
-	private WebElement lnkBlog;
-
-	@FindBy(xpath = ".//a[text()='Contact']")
-	private WebElement lnkContact;
-
-	public HomePageObjects() {
-		PageFactory.initElements(driver, this);
-	}
-
-	public WebElement getRegistrationFromPanel() {
-		return registration;
-	}
-
-	public List<String> getnavPanelHeading() {
-		ArrayList<String> list = new ArrayList<String>();
-		for (WebElement element : navPanelHeading) {
-			list.add(element.getText());
+public void show()
+{
+}		public static void main(String[] args) {
+				String s="Java";
+		
+				String s1= new String();
+				s1="Java Program";
+				
+				System.out.println(s.toLowerCase());
+				System.out.println(s.toUpperCase());
+				System.out.println(s.concat(s1));
+				System.out.println(s1.contains("Java"));
+				System.out.println(s.equals(s1));
+				System.out.println(s.equalsIgnoreCase("jaVa"));
+				System.out.println(s.startsWith("J"));
+				System.out.println(s.endsWith("a"));
+				System.out.println(s.length());
+				System.out.println(s.charAt(2));
+				System.out.println("---------------->");
+				char ch[]=s.toCharArray();
+				for(int i=0;i<ch.length;i++) {
+					System.out.println(ch[i]);
+				}
+				System.out.println(s.replaceAll(s, "Phyton"));
+				
+				String s2="java is the Programming Lang";
+				String s3[]=s2.split(" ");
+				for(String a:s3) {
+					System.out.println(a);
+				}
+				
+				
 		}
-		return list;
-	}
-
-	public WebElement getImgCustomerSupport() {
-		return imgCustomerSupport;
-	}
-
-	public WebElement getTitleHome() {
-		return titleHome;
-	}
 	
-	public WebElement getlnkAboutUs() {
-		return lnkAbousUs;
-	}
-	
-	public WebElement getlnkServices() {
-		return lnkServices;
-	}
-	
-	public WebElement getlnkBlog() {
-		return lnkBlog;
-	}
-	
-	public WebElement getlnkContact() {
-		return lnkContact;
-	}	
 }
-
-
